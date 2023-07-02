@@ -10,7 +10,7 @@ export default function Home() {
 				</div>
 			</div>
 			<div className='my-20'>
-				<div className='grid place-items-center w-[15rem] h-[15rem] bg-red-500 rounded-full'>
+				<div className='grid place-items-center w-[15rem] h-[15rem] bg-sky-500 rounded-full'>
 					<h1 className='text-4xl font-bold text-white'>00:00</h1>
 				</div>
 			</div>
