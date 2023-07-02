@@ -9,6 +9,7 @@ export default function Home() {
 	const [elapsedTime, setElapsedTime] = useState(0);
 	const [savedTime, setSavedTime] = useState(0);
 	const timerRef = useRef<any>(null);
+	const appVersion = process.env.NEXT_PUBLIC_APP_VERSION;
 
 	function startTimer() {
 		if (!isTimerRunning) {
@@ -96,6 +97,9 @@ export default function Home() {
 					</h3>
 				</div>
 			)}
+			<div id='app-version-number' className='my-5'>
+				<span className='text-sm text-slate-400'>version {appVersion}</span>
+			</div>
 		</div>
 	);
 }
