@@ -9,6 +9,7 @@ export default function Home() {
 
 	function startTimer() {
 		if (!isTimerRunning) {
+			setSavedTime(0);
 			setIsTimerRunning(true);
 			timerRef.current = setInterval(() => {
 				setElapsedTime((prevElapsedTime) => prevElapsedTime + 1);
