@@ -32,11 +32,11 @@ export default function Home() {
 	}
 
 	function paintColor(time: number): string {
-		if (time >= 180) {
+		if (time >= 120) {
 			return 'bg-red-500';
-		} else if (time >= 150) {
+		} else if (time >= 90) {
 			return 'bg-yellow-400';
-		} else if (time >= 120) {
+		} else if (time >= 60) {
 			return 'bg-green-500 ';
 		} else {
 			return 'bg-sky-300';
