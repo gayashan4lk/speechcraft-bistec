@@ -1,0 +1,402 @@
+[
+	{
+		"id": 0,
+		"topic": "If you were president for a day, what would be your first action to the country?"
+	},
+	{
+		"id": 1,
+		"topic": "What’s your favorite song and why?"
+	},
+	{
+		"id": 2,
+		"topic": "What’s 1 idea that you have changed your mind on throughout the years?"
+	},
+	{
+		"id": 3,
+		"topic": "There are people who say the Holocaust never happened, what do you say to those people?"
+	},
+	{
+		"id": 4,
+		"topic": "Do you think people can change, why or why not?"
+	},
+	{
+		"id": 5,
+		"topic": "What is one loss you took in your life that eventually turned out to be a win?"
+	},
+	{
+		"id": 6,
+		"topic": "Do you think shyness can be cured?"
+	},
+	{
+		"id": 7,
+		"topic": "Make a case for cats being better than dogs to a dog person."
+	},
+	{
+		"id": 8,
+		"topic": "Why do you think people struggle with creating Toastmasters Table topics questions?"
+	},
+	{
+		"id": 9,
+		"topic": "How come people grow apart?"
+	},
+	{
+		"id": 10,
+		"topic": "What would you change about the modern school system?"
+	},
+	{
+		"id": 11,
+		"topic": "Do you think impromptu speaking should be taught in school?"
+	},
+	{
+		"id": 12,
+		"topic": "What role do you think sports plays in culture?"
+	},
+	{
+		"id": 13,
+		"topic": "How much do you think fashion influences psychology?"
+	},
+	{
+		"id": 14,
+		"topic": "What’s your take on the ‘never judge a book by its cover’ saying?"
+	},
+	{
+		"id": 15,
+		"topic": "Why do you think someone struggles with low self-esteem?"
+	},
+	{
+		"id": 16,
+		"topic": "Despite vast technological, economical and innovative progress, why do you think depression is on the rise for the masses?"
+	},
+	{
+		"id": 17,
+		"topic": "How important is weight lifting to living a happy life?"
+	},
+	{
+		"id": 18,
+		"topic": "Can people who disagree on politics be married?"
+	},
+	{
+		"id": 19,
+		"topic": "What’s one hobby you have that allows you to relax?"
+	},
+	{
+		"id": 20,
+		"topic": "What’s one thing you wished you learned sooner?"
+	},
+	{
+		"id": 21,
+		"topic": "Do you think it’s important to learn to public speak at a young age?"
+	},
+	{
+		"id": 22,
+		"topic": "Can enemies ever become friends?"
+	},
+	{
+		"id": 23,
+		"topic": "Define ‘trust’ in your own words."
+	},
+	{
+		"id": 24,
+		"topic": "Is technology an overall net positive or net negative for society?"
+	},
+	{
+		"id": 25,
+		"topic": "What would be your advice to someone who is having career issues due to a mean boss?"
+	},
+	{
+		"id": 26,
+		"topic": "Give a pep talk to a shy kid who is resisting going to an important networking event."
+	},
+	{
+		"id": 27,
+		"topic": "What is your opinion of the Tik Tok app?"
+	},
+	{
+		"id": 28,
+		"topic": "What type of music do you like the most and why?"
+	},
+	{
+		"id": 29,
+		"topic": "Do you think charities do more harm than good?"
+	},
+	{
+		"id": 30,
+		"topic": "What’s the most important step to calm down a person who is angry?"
+	},
+	{
+		"id": 31,
+		"topic": "Which subject do you wish you were taught in school?"
+	},
+	{
+		"id": 32,
+		"topic": "Should meditation be a mandatory practice for entrepreneurs?"
+	},
+	{
+		"id": 33,
+		"topic": "What’s your favorite movie and why?"
+	},
+	{
+		"id": 34,
+		"topic": "How important is traveling to speeding up maturation in a person?"
+	},
+	{
+		"id": 35,
+		"topic": "Do you think shaming serves a role in culture?"
+	},
+	{
+		"id": 36,
+		"topic": "Do you think it would be a good thing or a bad thing if people could remember their dreams?"
+	},
+	{
+		"id": 37,
+		"topic": "What’s your take on ‘speak up for those who don’t have a voice’?"
+	},
+	{
+		"id": 38,
+		"topic": "Do you think intelligence is fixed or can anyone become smarter with desire?"
+	},
+	{
+		"id": 39,
+		"topic": "What’s the biggest difference between victor and victim mentality?"
+	},
+	{
+		"id": 40,
+		"topic": "How many friends do you think is optimal for a person to have? Explain your rationale."
+	},
+	{
+		"id": 41,
+		"topic": "Do you believe in luck?"
+	},
+	{
+		"id": 42,
+		"topic": "If you could live anywhere besides where you live now, where would it be?"
+	},
+	{
+		"id": 43,
+		"topic": "Should adults read fiction, why or why not?"
+	},
+	{
+		"id": 44,
+		"topic": "What’s your take on the self-improvement industry?"
+	},
+	{
+		"id": 45,
+		"topic": "Why do you think people have fears?"
+	},
+	{
+		"id": 46,
+		"topic": "What do you think is more important for success, IQ scores, curiosity, or are they unable to be compared?"
+	},
+	{
+		"id": 47,
+		"topic": "Define what you think the ‘highlight reel culture’ means."
+	},
+	{
+		"id": 48,
+		"topic": "What book have you reread? If there isn’t any, which book would you reread?"
+	},
+	{
+		"id": 49,
+		"topic": "Would you ever go sky diving, why or why not?"
+	},
+	{
+		"id": 50,
+		"topic": "Do you think coding should be taught at an early age?"
+	},
+	{
+		"id": 51,
+		"topic": "Do you think the Toastmasters Table topics section is a good or destructive feature of the Toastmasters club?"
+	},
+	{
+		"id": 52,
+		"topic": "Is social media overall good or bad for society?"
+	},
+	{
+		"id": 53,
+		"topic": "Which person inspires you and why?"
+	},
+	{
+		"id": 54,
+		"topic": "How would you define intent?"
+	},
+	{
+		"id": 55,
+		"topic": "What came first, the chicken or the egg?"
+	},
+	{
+		"id": 56,
+		"topic": "Can creativity be taught, why or why not?"
+	},
+	{
+		"id": 57,
+		"topic": "Do you think flying cars will ever be a thing?"
+	},
+	{
+		"id": 58,
+		"topic": "Can science and religion coexist?"
+	},
+	{
+		"id": 59,
+		"topic": "How would you advise someone to attend their first Toastmasters meeting?"
+	},
+	{
+		"id": 60,
+		"topic": "What’s more important, speaking or listening?"
+	},
+	{
+		"id": 61,
+		"topic": "If you could have 1 superpower, what would it be?"
+	},
+	{
+		"id": 62,
+		"topic": "Do you think ebooks will ever replace physical books?"
+	},
+	{
+		"id": 63,
+		"topic": "Why do you think lottery winners often go broke?"
+	},
+	{
+		"id": 64,
+		"topic": "Should everyone write at least 1 book in their life?"
+	},
+	{
+		"id": 65,
+		"topic": "What’s the greatest gift a parent can give to their child?"
+	},
+	{
+		"id": 66,
+		"topic": "Do you think PowerPoints are good for a speech or does it distract from the message?"
+	},
+	{
+		"id": 67,
+		"topic": "Can friends be friends if they vehemently disagree on politics?"
+	},
+	{
+		"id": 68,
+		"topic": "Should public speakers practice writing?"
+	},
+	{
+		"id": 69,
+		"topic": "What’s your #1 advice for someone who has no clue what they want to do for a living in the future?"
+	},
+	{
+		"id": 70,
+		"topic": "How important is imagination for the learning process?"
+	},
+	{
+		"id": 71,
+		"topic": "Propose a few ways for kids to improve their social skills."
+	},
+	{
+		"id": 72,
+		"topic": "What are some ways adults can become funnier?"
+	},
+	{
+		"id": 73,
+		"topic": "Do you believe in participation trophies?"
+	},
+	{
+		"id": 74,
+		"topic": "Which subject should every adult know?"
+	},
+	{
+		"id": 75,
+		"topic": "What are a few ways to build grit & consistency?"
+	},
+	{
+		"id": 76,
+		"topic": "Why do some people complain more than others despite facing less pain?"
+	},
+	{
+		"id": 77,
+		"topic": "Do you think most companies should allow their employees to work from home?"
+	},
+	{
+		"id": 78,
+		"topic": "What advice do you have for someone at rock bottom?"
+	},
+	{
+		"id": 79,
+		"topic": "Is too much empathy a bad thing?"
+	},
+	{
+		"id": 80,
+		"topic": "Are people capable of getting brainwashed? Why do you think that is?"
+	},
+	{
+		"id": 81,
+		"topic": "What is your favorite TED Talk and why?"
+	},
+	{
+		"id": 82,
+		"topic": "How would you define integrity?"
+	},
+	{
+		"id": 83,
+		"topic": "What’s the biggest lesson you’ve learned from a failure?"
+	},
+	{
+		"id": 84,
+		"topic": "Do you think virtual reality will become mainstream in the future?"
+	},
+	{
+		"id": 85,
+		"topic": "What advice would you give to someone who is afraid of public speaking?"
+	},
+	{
+		"id": 86,
+		"topic": "How important is it to have a mentor in your life?"
+	},
+	{
+		"id": 87,
+		"topic": "What’s your opinion on cancel culture?"
+	},
+	{
+		"id": 88,
+		"topic": "Should every kid be required to learn a musical instrument?"
+	},
+	{
+		"id": 89,
+		"topic": "What are a few ways to overcome procrastination?"
+	},
+	{
+		"id": 90,
+		"topic": "Do you think artificial intelligence will be a threat to humanity?"
+	},
+	{
+		"id": 91,
+		"topic": "What’s the best way to learn a new language?"
+	},
+	{
+		"id": 92,
+		"topic": "Can money buy happiness?"
+	},
+	{
+		"id": 93,
+		"topic": "What is the key to a successful relationship?"
+	},
+	{
+		"id": 94,
+		"topic": "Should everyone learn how to code?"
+	},
+	{
+		"id": 95,
+		"topic": "What’s the most important quality for a leader to have?"
+	},
+	{
+		"id": 96,
+		"topic": "What is one thing you've always wanted to learn but haven't had the opportunity to?"
+	},
+	{
+		"id": 97,
+		"topic": "Should schools teach financial literacy?"
+	},
+	{
+		"id": 98,
+		"topic": "What is the value of failure?"
+	},
+	{
+		"id": 99,
+		"topic": "What is the biggest challenge facing the world today?"
+	}
+]

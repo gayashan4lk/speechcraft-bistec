@@ -1,7 +1,9 @@
 'use client';
 import { useState, useRef, useEffect } from 'react';
+import data from '../data/speech-topics.json';
 
 export default function Home() {
+	const [topic, setTopic] = useState('');
 	const [isTimerRunning, setIsTimerRunning] = useState(false);
 	const [elapsedTime, setElapsedTime] = useState(0);
 	const [savedTime, setSavedTime] = useState(0);
@@ -14,6 +16,9 @@ export default function Home() {
 			timerRef.current = setInterval(() => {
 				setElapsedTime((prevElapsedTime) => prevElapsedTime + 1);
 			}, 1000);
+
+			const randomIndex = Math.floor(Math.random() * data.length);
+			setTopic(data[randomIndex].topic);
 		}
 	}
 
@@ -23,6 +28,7 @@ export default function Home() {
 			setIsTimerRunning(false);
 			clearInterval(timerRef.current);
 			setElapsedTime(0);
+			setTopic('');
 		}
 	}
 
@@ -61,13 +67,25 @@ export default function Home() {
 
 	return (
 		<div className='min-h-screen p-5 flex flex-col items-center'>
-			<div className='my-3'>
-				<div className='mx-10'>
-					<h3 className='text-sm font-extrabold text-center'>YOUR TOPIC</h3>
-					<h1 className='text-3xl font-semibold text-left text-slate-600 mt-5'>
-						What’s your take on the ‘never judge a book by its cover’ saying?
-					</h1>
-				</div>
+			<div className='my-3 mx-10 h-[8rem]'>
+				{topic === '' ? (
+					<>
+						<h1 className='text-3xl font-semibold text-center text-slate-700 mt-5'>
+							Press GO to start
+						</h1>
+					</>
+				) : (
+					<>
+						<h3 className='text-sm font-extrabold text-center text-slate-700'>
+							YOUR TOPIC
+						</h3>
+						<div className='mt-5 p-5 border-4 border-slate-200 bg-slate-100  rounded-lg'>
+							<p className='text-3xl font-semibold text-left text-slate-500'>
+								{topic}
+							</p>
+						</div>
+					</>
+				)}
 			</div>
 			<div className='my-20'>
 				<div
