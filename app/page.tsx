@@ -2,7 +2,6 @@
 import { useState, useRef, useEffect } from 'react';
 
 export default function Home() {
-	console.log('document rendered');
 	const [isTimerRunning, setIsTimerRunning] = useState(false);
 	const [elapsedTime, setElapsedTime] = useState(0);
 	const [savedTime, setSavedTime] = useState(0);
@@ -18,7 +17,6 @@ export default function Home() {
 	}
 
 	function stopTimer() {
-		console.log(elapsedTime);
 		if (isTimerRunning) {
 			setSavedTime(elapsedTime);
 			setIsTimerRunning(false);
@@ -46,8 +44,6 @@ export default function Home() {
 	}
 
 	useEffect(() => {
-		console.log('isTimerRunning', isTimerRunning);
-		console.log('elapsedTime', elapsedTime);
 		const handleKeyDown = (event: KeyboardEvent) => {
 			if (event.code === 'Space') {
 				event.preventDefault();
