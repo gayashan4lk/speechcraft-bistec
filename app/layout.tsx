@@ -4,8 +4,8 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-	title: 'Speech craft challenge',
-	description: 'Speech craft challenge for Toastmasters',
+	title: 'Speechcraft',
+	description: 'Speechcraft table topics challenge for Toastmasters',
 };
 
 export default function RootLayout({
