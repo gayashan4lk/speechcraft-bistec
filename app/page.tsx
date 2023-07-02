@@ -1,6 +1,7 @@
 'use client';
 import { useState, useRef, useEffect } from 'react';
 import data from '../data/speech-topics.json';
+import { formatTime } from '../utils/time-util-fns';
 
 export default function Home() {
 	const [topic, setTopic] = useState('');
@@ -29,24 +30,6 @@ export default function Home() {
 			clearInterval(timerRef.current);
 			setElapsedTime(0);
 			setTopic('');
-		}
-	}
-
-	function formatTime(time: number): string {
-		const minutes = Math.floor(time / 60);
-		const seconds = time % 60;
-		return `${minutes}:${seconds.toString().padStart(2, '0')}`;
-	}
-
-	function paintColor(time: number): string {
-		if (time >= 120) {
-			return 'bg-red-500';
-		} else if (time >= 90) {
-			return 'bg-yellow-400';
-		} else if (time >= 60) {
-			return 'bg-green-500 ';
-		} else {
-			return 'bg-sky-300';
 		}
 	}
 
@@ -88,15 +71,7 @@ export default function Home() {
 				)}
 			</div>
 			<div className='my-20'>
-				<div
-					className={`grid place-items-center w-[20rem] h-[20rem] rounded-full ${paintColor(
-						elapsedTime
-					)}`}
-				>
-					<h1 className='text-5xl font-bold text-white'>
-						{formatTime(elapsedTime)}
-					</h1>
-				</div>
+				<TimerColorLight time={elapsedTime} />
 			</div>
 			<div className='my-10'>
 				<button
@@ -121,6 +96,34 @@ export default function Home() {
 					</h3>
 				</div>
 			)}
+		</div>
+	);
+}
+
+type TimerColorLightProps = {
+	time: number;
+};
+
+function TimerColorLight({ time }: TimerColorLightProps) {
+	function getCssRuleForColor(time: number): string {
+		if (time >= 120) {
+			return 'bg-red-500';
+		} else if (time >= 90) {
+			return 'bg-yellow-400';
+		} else if (time >= 60) {
+			return 'bg-green-500 ';
+		} else {
+			return 'bg-sky-300';
+		}
+	}
+
+	return (
+		<div
+			className={`grid place-items-center w-[20rem] h-[20rem] rounded-full ${getCssRuleForColor(
+				time
+			)}`}
+		>
+			<h1 className='text-5xl font-bold text-white'>{formatTime(time)}</h1>
 		</div>
 	);
 }
