@@ -1,10 +1,11 @@
 'use client';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 export default function Home() {
+	console.log('document rendered');
 	const [isTimerRunning, setIsTimerRunning] = useState(false);
 	const [elapsedTime, setElapsedTime] = useState(0);
-	const [savedTime, setSavedTime] = useState<number | null>(null);
+	const [savedTime, setSavedTime] = useState(0);
 	const timerRef = useRef<any>(null);
 
 	function startTimer() {
@@ -17,10 +18,11 @@ export default function Home() {
 	}
 
 	function stopTimer() {
+		console.log(elapsedTime);
 		if (isTimerRunning) {
+			setSavedTime(elapsedTime);
 			setIsTimerRunning(false);
 			clearInterval(timerRef.current);
-			setSavedTime(elapsedTime);
 			setElapsedTime(0);
 		}
 	}
@@ -31,51 +33,79 @@ export default function Home() {
 		return `${minutes}:${seconds.toString().padStart(2, '0')}`;
 	}
 
-	function getColorLightColor(time: number): string {
+	function paintColor(time: number): string {
 		if (time >= 180) {
 			return 'bg-red-500';
 		} else if (time >= 150) {
-			return 'bg-yellow-500';
+			return 'bg-yellow-400';
 		} else if (time >= 120) {
-			return 'bg-green-500';
+			return 'bg-green-500 ';
 		} else {
-			return 'bg-sky-500';
+			return 'bg-sky-300';
 		}
 	}
+
+	useEffect(() => {
+		console.log('isTimerRunning', isTimerRunning);
+		console.log('elapsedTime', elapsedTime);
+		const handleKeyDown = (event: KeyboardEvent) => {
+			if (event.code === 'Space') {
+				event.preventDefault();
+				isTimerRunning ? stopTimer() : startTimer();
+			}
+		};
+
+		document.addEventListener('keydown', handleKeyDown);
+
+		return () => {
+			document.removeEventListener('keydown', handleKeyDown);
+		};
+	}, [isTimerRunning]);
 
 	return (
 		<div className='min-h-screen p-5 flex flex-col items-center'>
 			<div className='my-3'>
 				<div className='mx-10'>
 					<h3 className='text-sm font-extrabold text-center'>YOUR TOPIC</h3>
-					<h1 className='text-3xl font-semibold text-left text-slate-500 mt-5'>
+					<h1 className='text-3xl font-semibold text-left text-slate-600 mt-5'>
 						What’s your take on the ‘never judge a book by its cover’ saying?
 					</h1>
 				</div>
 			</div>
 			<div className='my-20'>
 				<div
-					className={`grid place-items-center w-[15rem] h-[15rem] rounded-full ${getColorLightColor(
+					className={`grid place-items-center w-[20rem] h-[20rem] rounded-full ${paintColor(
 						elapsedTime
 					)}`}
 				>
-					<h1 className='text-4xl font-bold text-white'>
+					<h1 className='text-5xl font-bold text-white'>
 						{formatTime(elapsedTime)}
 					</h1>
 				</div>
 			</div>
 			<div className='my-10'>
-				<div>
-					<button
-						onClick={isTimerRunning ? stopTimer : startTimer}
-						className='p-3 border-2 border-slate-300 bg-slate-200 rounded-full w-40 h-20 hover:border-3 hover:border-slate-400 hover:bg-slate-300'
-					>
-						<span className='text-2xl font-semibold'>
-							{isTimerRunning ? `STOP` : `GO`}
-						</span>
-					</button>
-				</div>
+				<button
+					onClick={isTimerRunning ? stopTimer : startTimer}
+					className='p-5 border-2 border-slate-300 bg-slate-200 rounded-full w-40 h-20 hover:border-3 hover:border-slate-400 hover:bg-slate-300'
+				>
+					<span className='text-2xl font-bold text-slate-700'>
+						{isTimerRunning ? `STOP` : `GO`}
+					</span>
+				</button>
 			</div>
+			<div>
+				<h5 className='text-sm font-semibold text-slate-400'>
+					Press Spacebar key to start and stop.
+				</h5>
+			</div>
+			{savedTime !== 0 && (
+				<div className='my-10'>
+					<h3 className='text-xl'>
+						Your last time was{' '}
+						<span className='font-bold'>{formatTime(savedTime)}</span> mins.
+					</h3>
+				</div>
+			)}
 		</div>
 	);
 }
