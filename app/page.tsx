@@ -1,7 +1,12 @@
 'use client';
 import { useState, useRef, useEffect } from 'react';
+import { formatTime } from '@/utils/time-util-fns';
+import { GetReadyTimer } from '@/components/GetReadyTimer';
+import { SpeechTimer } from '@/components/SpeechTimer';
+import {timeConfig} from "@/data/time-config";
 import data from '../data/speech-topics.json';
-import { formatTime } from '../utils/time-util-fns';
+
+const countDownPeriodInSeconds: number = timeConfig.countDownPeriodInSeconds;
 
 export default function Home() {
 	const [topic, setTopic] = useState('');
@@ -10,6 +15,57 @@ export default function Home() {
 	const [savedTime, setSavedTime] = useState(0);
 	const timerRef = useRef<any>(null);
 	const appVersion = process.env.NEXT_PUBLIC_APP_VERSION;
+	const [countDownTimer, setCountDownTimer] = useState(
+		countDownPeriodInSeconds
+	);
+	const countDownIntervalId = useRef<any>(null);
+	const [isSpeechInProgress, setIsSpeechInProgress] = useState(false);
+
+	function startSpeech() {
+		startCountDown();
+		setTopic(generateRandomTopic());
+		setIsSpeechInProgress(true);
+	}
+
+	function endSpeech() {
+		setTopic('');
+		if (countDownIntervalId !== null) {
+			endCountDown();
+		}
+		if (isTimerRunning) {
+			stopTimer();
+		}
+		setIsSpeechInProgress(false);
+	}
+
+	function startCountDown() {
+		if (countDownIntervalId.current !== null) return; // Don't start if it's already started
+
+		countDownIntervalId.current = setInterval(() => {
+			setCountDownTimer((prevTimer: number) => {
+				if (prevTimer <= 1) {
+					clearInterval(countDownIntervalId.current);
+					countDownIntervalId.current = null;
+					afterCountDown();
+					return 0;
+				}
+				return prevTimer - 1;
+			});
+		}, 1000);
+	}
+
+	function endCountDown() {
+		if (countDownIntervalId.current !== null) {
+			clearInterval(countDownIntervalId.current);
+			countDownIntervalId.current = null;
+		}
+		setCountDownTimer(countDownPeriodInSeconds);
+	}
+
+	function afterCountDown() {
+		startTimer();
+		console.log('Countdown finished');
+	}
 
 	function startTimer() {
 		if (!isTimerRunning) {
@@ -18,9 +74,6 @@ export default function Home() {
 			timerRef.current = setInterval(() => {
 				setElapsedTime((prevElapsedTime) => prevElapsedTime + 1);
 			}, 1000);
-
-			const randomIndex = Math.floor(Math.random() * data.length);
-			setTopic(data[randomIndex].topic);
 		}
 	}
 
@@ -30,24 +83,26 @@ export default function Home() {
 			setIsTimerRunning(false);
 			clearInterval(timerRef.current);
 			setElapsedTime(0);
-			setTopic('');
 		}
+	}
+
+	function generateRandomTopic(): string {
+		const randomIndex = Math.floor(Math.random() * data.length);
+		return data[randomIndex].topic;
 	}
 
 	useEffect(() => {
 		const handleKeyDown = (event: KeyboardEvent) => {
 			if (event.code === 'Space') {
 				event.preventDefault();
-				isTimerRunning ? stopTimer() : startTimer();
+				isSpeechInProgress ? endSpeech() : startSpeech();
 			}
 		};
-
 		document.addEventListener('keydown', handleKeyDown);
-
 		return () => {
 			document.removeEventListener('keydown', handleKeyDown);
 		};
-	}, [isTimerRunning]);
+	}, [isSpeechInProgress]);
 
 	return (
 		<div className='min-h-screen p-5 flex flex-col items-center'>
@@ -72,62 +127,38 @@ export default function Home() {
 				)}
 			</div>
 			<div className='my-20'>
-				<TimerColorLight time={elapsedTime} />
+				{countDownIntervalId.current !== null || !isSpeechInProgress ? (
+					<GetReadyTimer time={countDownTimer} />
+				) : (
+					<SpeechTimer time={elapsedTime} />
+				)}
 			</div>
 			<div className='my-10'>
 				<button
-					onClick={isTimerRunning ? stopTimer : startTimer}
+					onClick={isSpeechInProgress ? endSpeech : startSpeech}
 					className='p-5 border-2 border-slate-300 bg-slate-200 rounded-full w-40 h-20 hover:border-3 hover:border-slate-400 hover:bg-slate-300'
 				>
 					<span className='text-2xl font-bold text-slate-700'>
-						{isTimerRunning ? `STOP` : `GO`}
+						{isSpeechInProgress ? `STOP` : `GO`}
 					</span>
 				</button>
 			</div>
 			<div>
 				<h5 className='text-sm font-semibold text-slate-400'>
-					Press Spacebar key to start and stop.
+					Press Space Bar to start and stop.
 				</h5>
 			</div>
 			{savedTime !== 0 && (
 				<div className='my-10'>
 					<h3 className='text-xl'>
 						Your last time was{' '}
-						<span className='font-bold'>{formatTime(savedTime)}</span> mins.
+						<span className='font-bold'>{formatTime(savedTime)}</span> minutes.
 					</h3>
 				</div>
 			)}
 			<div id='app-version-number' className='my-5'>
 				<span className='text-sm text-slate-400'>version {appVersion}</span>
 			</div>
-		</div>
-	);
-}
-
-type TimerColorLightProps = {
-	time: number;
-};
-
-function TimerColorLight({ time }: TimerColorLightProps) {
-	function getCssRuleForColor(time: number): string {
-		if (time >= 120) {
-			return 'bg-red-500';
-		} else if (time >= 90) {
-			return 'bg-yellow-400';
-		} else if (time >= 60) {
-			return 'bg-green-500 ';
-		} else {
-			return 'bg-sky-300';
-		}
-	}
-
-	return (
-		<div
-			className={`grid place-items-center w-[20rem] h-[20rem] rounded-full ${getCssRuleForColor(
-				time
-			)}`}
-		>
-			<h1 className='text-5xl font-bold text-white'>{formatTime(time)}</h1>
 		</div>
 	);
 }
