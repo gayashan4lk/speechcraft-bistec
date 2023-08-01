@@ -1,7 +1,7 @@
 'use client';
 import { useState, useRef, useEffect } from 'react';
 import data from '../data/speech-topics.json';
-import { formatTime } from '../utils/time-util-fns';
+import { formatTime } from '@/utils/time-util-fns';
 
 export default function Home() {
 	const [topic, setTopic] = useState('');
@@ -86,14 +86,14 @@ export default function Home() {
 			</div>
 			<div>
 				<h5 className='text-sm font-semibold text-slate-400'>
-					Press Spacebar key to start and stop.
+					Press Space Bar key to start and stop.
 				</h5>
 			</div>
 			{savedTime !== 0 && (
 				<div className='my-10'>
 					<h3 className='text-xl'>
 						Your last time was{' '}
-						<span className='font-bold'>{formatTime(savedTime)}</span> mins.
+						<span className='font-bold'>{formatTime(savedTime)}</span> minutes.
 					</h3>
 				</div>
 			)}
@@ -110,11 +110,11 @@ type TimerColorLightProps = {
 
 function TimerColorLight({ time }: TimerColorLightProps) {
 	function getCssRuleForColor(time: number): string {
-		if (time >= 120) {
+		if (time >= 300) {
 			return 'bg-red-500';
-		} else if (time >= 90) {
+		} else if (time >= 240) {
 			return 'bg-yellow-400';
-		} else if (time >= 60) {
+		} else if (time >= 180) {
 			return 'bg-green-500 ';
 		} else {
 			return 'bg-sky-300';
