@@ -108,35 +108,35 @@ export default function Home() {
 
 	return (
 		<div className='min-h-screen p-5 flex flex-col items-center'>
-			<TitleBar topic={topic} />
-			<div className='my-20'>
+			<div className='md:mb-20 mb-5'>
 				{countDownIntervalId.current !== null || !isSpeechInProgress ? (
 					<GetReadyTimer time={countDownTimer} />
 				) : (
 					<SpeechTimer time={elapsedTime} />
 				)}
 			</div>
-			<div className='my-10'>
+			<div className='md:my-10 my-5'>
 				<GoButton
 					isSpeechInProgress={isSpeechInProgress}
 					endSpeech={endSpeech}
 					startSpeech={startSpeech}
 				/>
 			</div>
-			<div>
+			<div className="md:visible invisible">
 				<h5 className='text-sm font-semibold text-slate-400'>
 					Press Space Bar to start and stop.
 				</h5>
 			</div>
+			<TitleBar topic={topic} />
 			{savedTime !== 0 && (
-				<div className='my-10'>
+				<div className='md:my-10 my-2'>
 					<h3 className='text-xl'>
 						Your last time was{' '}
 						<span className='font-bold'>{formatTime(savedTime)}</span> minutes.
 					</h3>
 				</div>
 			)}
-			<div id='app-version-number' className='my-5'>
+			<div id='app-version-number' className='md:my-5 my-2'>
 				<span className='text-sm text-slate-400'>version {appVersion}</span>
 			</div>
 		</div>
