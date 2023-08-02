@@ -3,8 +3,10 @@ import { useState, useRef, useEffect } from 'react';
 import { formatTime } from '@/utils/time-util-fns';
 import { GetReadyTimer } from '@/components/GetReadyTimer';
 import { SpeechTimer } from '@/components/SpeechTimer';
-import {timeConfig} from "@/data/time-config";
+import { timeConfig } from '@/data/time-config';
 import data from '../data/speech-topics.json';
+import { TitleBar } from '@/components/TitleBar';
+import { GoButton } from '@/components/GoButton';
 
 const countDownPeriodInSeconds: number = timeConfig.countDownPeriodInSeconds;
 
@@ -106,26 +108,7 @@ export default function Home() {
 
 	return (
 		<div className='min-h-screen p-5 flex flex-col items-center'>
-			<div className='my-3 mx-10 h-[8rem]'>
-				{topic === '' ? (
-					<>
-						<h1 className='text-3xl font-semibold text-center text-slate-700 mt-5'>
-							Press GO to start
-						</h1>
-					</>
-				) : (
-					<>
-						<h3 className='text-sm font-extrabold text-center text-slate-700'>
-							YOUR TOPIC
-						</h3>
-						<div className='mt-5 p-5 border-4 border-slate-200 bg-slate-100  rounded-lg'>
-							<p className='text-3xl font-semibold text-left text-slate-500'>
-								{topic}
-							</p>
-						</div>
-					</>
-				)}
-			</div>
+			<TitleBar topic={topic} />
 			<div className='my-20'>
 				{countDownIntervalId.current !== null || !isSpeechInProgress ? (
 					<GetReadyTimer time={countDownTimer} />
@@ -134,14 +117,11 @@ export default function Home() {
 				)}
 			</div>
 			<div className='my-10'>
-				<button
-					onClick={isSpeechInProgress ? endSpeech : startSpeech}
-					className='p-5 border-2 border-slate-300 bg-slate-200 rounded-full w-40 h-20 hover:border-3 hover:border-slate-400 hover:bg-slate-300'
-				>
-					<span className='text-2xl font-bold text-slate-700'>
-						{isSpeechInProgress ? `STOP` : `GO`}
-					</span>
-				</button>
+				<GoButton
+					isSpeechInProgress={isSpeechInProgress}
+					endSpeech={endSpeech}
+					startSpeech={startSpeech}
+				/>
 			</div>
 			<div>
 				<h5 className='text-sm font-semibold text-slate-400'>
