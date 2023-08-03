@@ -5,7 +5,7 @@ async function getTopics(): Promise<{id: number, topic: string}[]> {
 	if(process.env.NEXT_PUBLIC_BASE_URL) {
 		baseUrl = process.env.NEXT_PUBLIC_BASE_URL
 	} else {
-		baseUrl = process.env.VERCEL_URL
+		baseUrl = `https://${process.env.VERCEL_URL}/`
 	}
 	console.log(baseUrl);
 	const res = await fetch(`${baseUrl}api/topics`);
