@@ -10,6 +10,8 @@ async function getTopics(): Promise<{id: number, topic: string}[]> {
 	console.log(baseUrl);
 	const res = await fetch(`${baseUrl}api/topics`);
 
+	console.log('Content type:', res.headers.get('content-type'));
+
 	console.log(res);
 	if(!res.ok){
 		console.log("res is not ok!")
