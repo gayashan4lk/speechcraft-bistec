@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import topics from '../../../data/speech-topics.json';
 
-export async function GET(request: Request, {params}: any) {
+export default async function handler(req: any, res: any) {
     try{
         const nextId = topics.length - 1;
         const filePath = path.join(process.cwd(), "data", "speech-topics-data.txt");
@@ -17,24 +17,15 @@ export async function GET(request: Request, {params}: any) {
                 id : id,
                 topic: `${_topic}`
             }
-          textTopics.push(topic);
+            textTopics.push(topic);
         })
 
         const result= topics.concat(textTopics);
 
-        return new Response(JSON.stringify(result), {
-            status: 200,
-            headers: {
-                'content-type': 'application/json'
-            }
-        })
+        // Send the entire result array, not just the first element
+        res.status(200).json(result);
     } catch(error){
         console.error('Error reading the file: ', error);
-        return new Response(JSON.stringify({error: "Error reading the file"}), {
-            status: 500,
-            headers: {
-                'content-type': 'application/json'
-            }
-        })
+        res.status(500).json({error: "Error reading the file"});
     }
 }
