@@ -1,7 +1,13 @@
 import AppContainer from "@/components/AppContainer";
 
 async function getTopics(): Promise<{id: number, topic: string}[]> {
-	const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000/';
+	let baseUrl;
+	if(process.env.NEXT_PUBLIC_BASE_URL) {
+		baseUrl = process.env.NEXT_PUBLIC_BASE_URL
+	} else {
+		baseUrl = process.env.VERCEL_URL
+	}
+	console.log(baseUrl);
 	const res = await fetch(`${baseUrl}api/topics`);
 
 	if(!res.ok){
