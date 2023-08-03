@@ -10,9 +10,13 @@ async function getTopics(): Promise<{id: number, topic: string}[]> {
 	console.log(baseUrl);
 	const res = await fetch(`${baseUrl}api/topics`);
 
+	console.log(res);
 	if(!res.ok){
+		console.log("res is not ok!")
 		throw new Error('Failed to fetch speech topics.');
 	}
+
+	console.log("res is ok!")
 
 	return res.json();
 }
