@@ -3,8 +3,10 @@ import { useState, useRef, useEffect } from 'react';
 import { formatTime } from '@/utils/time-util-fns';
 import { GetReadyTimer } from '@/components/GetReadyTimer';
 import { SpeechTimer } from '@/components/SpeechTimer';
-import {timeConfig} from "@/data/time-config";
+import { timeConfig } from '@/data/time-config';
 import data from '../data/speech-topics.json';
+import { TitleBar } from '@/components/TitleBar';
+import { GoButton } from '@/components/GoButton';
 
 const countDownPeriodInSeconds: number = timeConfig.countDownPeriodInSeconds;
 
@@ -106,57 +108,35 @@ export default function Home() {
 
 	return (
 		<div className='min-h-screen p-5 flex flex-col items-center'>
-			<div className='my-3 mx-10 h-[8rem]'>
-				{topic === '' ? (
-					<>
-						<h1 className='text-3xl font-semibold text-center text-slate-700 mt-5'>
-							Press GO to start
-						</h1>
-					</>
-				) : (
-					<>
-						<h3 className='text-sm font-extrabold text-center text-slate-700'>
-							YOUR TOPIC
-						</h3>
-						<div className='mt-5 p-5 border-4 border-slate-200 bg-slate-100  rounded-lg'>
-							<p className='text-3xl font-semibold text-left text-slate-500'>
-								{topic}
-							</p>
-						</div>
-					</>
-				)}
-			</div>
-			<div className='my-20'>
+			<div className='md:mb-20 mb-5'>
 				{countDownIntervalId.current !== null || !isSpeechInProgress ? (
 					<GetReadyTimer time={countDownTimer} />
 				) : (
 					<SpeechTimer time={elapsedTime} />
 				)}
 			</div>
-			<div className='my-10'>
-				<button
-					onClick={isSpeechInProgress ? endSpeech : startSpeech}
-					className='p-5 border-2 border-slate-300 bg-slate-200 rounded-full w-40 h-20 hover:border-3 hover:border-slate-400 hover:bg-slate-300'
-				>
-					<span className='text-2xl font-bold text-slate-700'>
-						{isSpeechInProgress ? `STOP` : `GO`}
-					</span>
-				</button>
+			<div className='md:my-10 my-5'>
+				<GoButton
+					isSpeechInProgress={isSpeechInProgress}
+					endSpeech={endSpeech}
+					startSpeech={startSpeech}
+				/>
 			</div>
-			<div>
+			<div className="md:visible invisible">
 				<h5 className='text-sm font-semibold text-slate-400'>
 					Press Space Bar to start and stop.
 				</h5>
 			</div>
+			<TitleBar topic={topic} />
 			{savedTime !== 0 && (
-				<div className='my-10'>
+				<div className='md:my-10 my-2'>
 					<h3 className='text-xl'>
 						Your last time was{' '}
 						<span className='font-bold'>{formatTime(savedTime)}</span> minutes.
 					</h3>
 				</div>
 			)}
-			<div id='app-version-number' className='my-5'>
+			<div id='app-version-number' className='md:my-5 my-2'>
 				<span className='text-sm text-slate-400'>version {appVersion}</span>
 			</div>
 		</div>
