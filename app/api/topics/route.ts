@@ -21,7 +21,8 @@ export async function GET(request: Request, {params}: any) {
         })
 
         const result= topics.concat(textTopics);
-        return new Response(JSON.stringify(result), {
+
+        return new Response(JSON.stringify(result[0]), {
             status: 200,
             headers: {
                 'content-type': 'application/json'
