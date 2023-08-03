@@ -22,7 +22,7 @@ export async function GET(request: Request, {params}: any) {
 
         const result= topics.concat(textTopics);
 
-        return new Response(JSON.stringify(result[0]), {
+        return new Response(JSON.stringify(result), {
             status: 200,
             headers: {
                 'content-type': 'application/json'
