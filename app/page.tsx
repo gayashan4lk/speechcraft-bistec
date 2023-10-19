@@ -93,19 +93,6 @@ export default function Home() {
 		return data[randomIndex].topic;
 	}
 
-	useEffect(() => {
-		const handleKeyDown = (event: KeyboardEvent) => {
-			if (event.code === 'Space') {
-				event.preventDefault();
-				isSpeechInProgress ? endSpeech() : startSpeech();
-			}
-		};
-		document.addEventListener('keydown', handleKeyDown);
-		return () => {
-			document.removeEventListener('keydown', handleKeyDown);
-		};
-	}, [isSpeechInProgress]);
-
 	return (
 		<div className='min-h-screen p-5 flex flex-col items-center'>
 			<div className='md:mb-20 mb-5'>
@@ -122,11 +109,6 @@ export default function Home() {
 					startSpeech={startSpeech}
 				/>
 			</div>
-			{/* <div className="md:visible invisible">
-				<h5 className='text-sm font-semibold text-slate-400'>
-					Press Space Bar to start and stop.
-				</h5>
-			</div> */}
 			<TitleBar topic={topic} />
 			{savedTime !== 0 && (
 				<div className='md:my-10 my-2'>
