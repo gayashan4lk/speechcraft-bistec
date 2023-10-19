@@ -122,11 +122,11 @@ export default function Home() {
 					startSpeech={startSpeech}
 				/>
 			</div>
-			<div className="md:visible invisible">
+			{/* <div className="md:visible invisible">
 				<h5 className='text-sm font-semibold text-slate-400'>
 					Press Space Bar to start and stop.
 				</h5>
-			</div>
+			</div> */}
 			<TitleBar topic={topic} />
 			{savedTime !== 0 && (
 				<div className='md:my-10 my-2'>

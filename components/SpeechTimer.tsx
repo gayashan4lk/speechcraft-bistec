@@ -24,7 +24,7 @@ export function SpeechTimer({ time }: SpeechTimerProps) {
 
 	return (
 		<div
-			className={`grid place-items-center w-[20rem] h-[20rem] rounded-full ${getCssRuleForColor(
+			className={`grid place-items-center w-full h-full rounded-full ${getCssRuleForColor(
 				time
 			)}`}
 		>
