@@ -1,16 +1,18 @@
 // improptu speeches
-// "countDownPeriodInSeconds" : 30,
+// "countDownPeriodInSeconds" : 20,
 // "greenTimeInSeconds" : 60,
 // "yellowTimeInSeconds" : 90,
 // "redTimeInSeconds" : 120
 
+//Prepared speeches 0, 180, 240, 300
+//Ice Breaker speeches 0, 60, 90, 120
+//Impromptu speeches 15, 60, 90, 120
+
 
 export const timeConfig = {
-    "countDownPeriodInSeconds" : 2,
-    "greenTimeInSeconds" : 2,
-    "yellowTimeInSeconds" : 4,
-    "redTimeInSeconds" : 6
-    //Prepared speeches 180, 240, 300, 0
-    //Ice Breaker speeches 60, 90, 120, 0
-    //Impromptu speeches 60, 90, 120, 15
+    "countDownPeriodInSeconds" : 20,
+    "greenTimeInSeconds" : 60,
+    "yellowTimeInSeconds" : 90,
+    "redTimeInSeconds" : 120
+    
 }

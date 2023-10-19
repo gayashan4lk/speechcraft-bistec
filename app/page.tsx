@@ -119,7 +119,7 @@ export default function Home() {
 				return 'bg-green-500 ';
 			
 			default:
-				return 'bg-sky-300';
+				return 'bg-sky-200';
 		}
 	}
 
@@ -132,25 +132,25 @@ export default function Home() {
 				<div className='text-center'>
 				{showTimer ? (
 					<>
-						<h1 className='text-7xl mb-5 font-bold text-slate-400'>Get Ready</h1>
-						<h1 className='text-7xl font-bold text-slate-400'>{formatTime(countDownTime)}</h1>
+						<h1 className='md:text-5xl text-3xl mb-5 font-bold text-slate-400'>Get Ready</h1>
+						<h1 className='md:text-7xl text-5xl font-bold text-slate-400'>{formatTime(countDownTime)}</h1>
 					</>
 					) : (
-					<h1 className='text-9xl font-bold text-white'>{formatTime(elapsedTime)}</h1>
+					<h1 className='md:text-9xl text-7xl font-bold text-white'>{formatTime(elapsedTime)}</h1>
 				)}
 				</div>
 			</div>
 			
 			{savedTime !== 0 && (
-				<div className='md:my-2 my-2 fixed top-3/4 left-1/2 transform -translate-x-1/2 -translate-y-3/4'>
-					<h3 className='text-xl'>
-						Your last time was{' '}
+				<div className='fixed top-3/4 left-1/2 transform -translate-x-1/2 -translate-y-3/4'>
+					<h3 className='md:text-xl text-sm text-slate-400'>
+						Last speech time was{' '}
 						<span className='font-bold'>{formatTime(savedTime)}</span> minutes.
 					</h3>
 				</div>
 			)}
 
-			<div className='md:mb-20 mb-2 fixed bottom-0'>
+			<div className='md:mb-20 mb-10 fixed bottom-0'>
 				<GoButton
 					isSpeechInProgress={isSpeechInProgress}
 					endSpeech={endSpeech}
@@ -158,7 +158,7 @@ export default function Home() {
 				/>
 			</div>
 			<div id='app-version-number' className='md:my-2 my-2 mx-2 flex flex-col items-end fixed bottom-0 right-0'>
-				<span className='text-sm text-slate-400'>version {appVersion}</span>
+				<span className='md:text-sm text-xs text-slate-400'>version {appVersion}</span>
 			</div>
 		</div>
 	);
