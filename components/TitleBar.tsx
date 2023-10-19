@@ -5,7 +5,7 @@ export interface TitleBarProps {
 }
 export function TitleBar({ topic }: TitleBarProps) {
 	return (
-		<div className='my-3 mx-10 h-auto md:h-[8rem]'>
+		<div className='my-10 mx-10 h-auto md:h-[8rem]'>
 			{topic === '' ? (
 				<>
 					<h1 className='text-3xl font-semibold text-center text-slate-700 mt-5'>
