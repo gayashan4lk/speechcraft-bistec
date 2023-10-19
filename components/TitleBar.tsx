@@ -18,7 +18,7 @@ export function TitleBar({ topic }: TitleBarProps) {
 						YOUR TOPIC
 					</h3>
 					<div className='md:mt-5 md:p-5 md:border-4 mt-1 p-2 border-2 border-slate-200 bg-slate-100 rounded-lg'>
-						<p className='md:text-3xl text-lg font-semibold text-left text-slate-500'>
+						<p className='md:text-3xl text-lg font-semibold text-left text-slate-700'>
 							{topic}
 						</p>
 					</div>

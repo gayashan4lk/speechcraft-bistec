@@ -10,6 +10,7 @@ type SpeechTimerProps = {
 	time: number;
 };
 export function SpeechTimer({ time }: SpeechTimerProps) {
+
 	function getCssRuleForColor(time: number): string {
 		if (time >= redTimeInSeconds) {
 			return 'bg-red-500';
@@ -23,12 +24,8 @@ export function SpeechTimer({ time }: SpeechTimerProps) {
 	}
 
 	return (
-		<div
-			className={`grid place-items-center w-full h-full rounded-full ${getCssRuleForColor(
-				time
-			)}`}
-		>
-			<h1 className='text-5xl font-bold text-white'>{formatTime(time)}</h1>
+		<div>
+			<h1 className='text-9xl font-bold text-white'>{formatTime(time)}</h1>
 		</div>
 	);
 }
