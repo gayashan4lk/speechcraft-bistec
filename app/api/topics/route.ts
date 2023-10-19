@@ -1,18 +1,19 @@
 import fs from 'fs';
 import path from 'path';
-import topics from '../../../data/speech-topics.json';
+//import topics from '../../../data/speech-topics.json';
 
 export async function GET(request: Request, {params}: any) {
     try{
-        /*const nextId = topics.length - 1;
-        const filePath = path.join(process.cwd(), "data", "speech-topics-data.txt");
-        const textContent = fs.readFileSync(filePath, 'utf-8');
+        const jsonFilePath = path.join(process.cwd(), "data", "")
+
+        const textFilePath = path.join(process.cwd(), "data", "speech-topics-data.txt");
+        const textContent = fs.readFileSync(textFilePath, 'utf-8');
         const textLines = textContent.split('\n');
 
-        const textTopics: typeof topics = []
+        const textTopics : {id:number, topic: string}[] = []
         textLines.forEach((line) => {
             const [_id, _topic] = line.split('. ', 2);
-            const id = parseInt(_id) + nextId;
+            const id = parseInt(_id);
             const topic: {id: number, topic: string} = {
                 id : id,
                 topic: `${_topic}`
@@ -20,9 +21,9 @@ export async function GET(request: Request, {params}: any) {
             textTopics.push(topic);
         })
 
-        const result= topics.concat(textTopics);*/
+        //const result= topics.concat(textTopics);
 
-        return new Response(JSON.stringify(topics), {
+        return new Response(JSON.stringify(textTopics), {
             status: 200,
             headers: {
                 'content-type': 'application/json'
