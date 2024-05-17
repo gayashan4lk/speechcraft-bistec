@@ -16,3 +16,11 @@ export const timeConfig = {
     "redTimeInSeconds" : 120
     
 }
+
+export const roundRobinTimeConfig = {
+    "countDownPeriodInSeconds" : 3,
+    "greenTimeInSeconds" : 10,
+    "yellowTimeInSeconds" : 15,
+    "redTimeInSeconds" : 20
+    
+}
