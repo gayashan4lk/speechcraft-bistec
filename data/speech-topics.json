@@ -1,46 +1,82 @@
 [
   {
     "id": 0,
-    "topic": "Work-Life Balance for Men: Myth or Reality?"
+    "topic": "What’s the most memorable moment from your school days?"
   },
   {
     "id": 1,
-    "topic": "The Unsung Heroes: Men Who Made a Difference"
+    "topic": "Who was your favorite teacher, and why?"
   },
   {
     "id": 2,
-    "topic": "Mental Health and Men: Breaking the Silence"
+    "topic": "What’s a funny or embarrassing moment you remember from school?"
   },
   {
     "id": 3,
-    "topic": "Changing Dynamics: Men in Non-Traditional Roles"
+    "topic": "If you could go back to one day in school, which day would it be and why?"
   },
   {
     "id": 4,
-    "topic": "The Ideal Gentleman: Does He Exist?"
+    "topic": "What was your least favorite subject, and how did you cope with it?"
   },
   {
     "id": 5,
-    "topic": "World Men’s Day: Why It Matters"
+    "topic": "If you were a teacher, what subject would you teach and why?"
   },
   {
     "id": 6,
-    "topic": "A Letter to My Younger Self as a Man"
+    "topic": "Design your dream classroom—what would it look like?"
   },
   {
     "id": 7,
-    "topic": "Fatherhood and its Impact"
+    "topic": "If your school life was turned into a movie, what would it be called?"
   },
   {
     "id": 8,
-    "topic": "A Day in the Life of a Modern Man"
+    "topic": "Imagine you’re back in school today. How would you handle things differently?"
   },
   {
     "id": 9,
-    "topic": "A Day in the Life of a Ancient Man"
+    "topic": "If you could create a new subject for schools, what would it be?"
   },
   {
     "id": 10,
-    "topic": "Friendships among men"
+    "topic": "What’s one lesson you learned in school that has stuck with you for life?"
+  },
+  {
+    "id": 11,
+    "topic": "How did school shape who you are today?"
+  },
+  {
+    "id": 12,
+    "topic": "Share a time you overcame a challenge as a student."
+  },
+  {
+    "id": 13,
+    "topic": "What advice would you give to your younger self on your first day of school?"
+  },
+  {
+    "id": 14,
+    "topic": "What’s the most important thing school didn’t teach you that you had to learn later?"
+  },
+  {
+    "id": 15,
+    "topic": "If you could bring one thing from your childhood lunchbox to work, what would it be?"
+  },
+  {
+    "id": 16,
+    "topic": "Which school event or tradition did you look forward to the most?"
+  },
+  {
+    "id": 17,
+    "topic": "What was your go-to excuse for not doing homework?"
+  },
+  {
+    "id": 18,
+    "topic": "Share your funniest or most creative science fair project idea."
+  },
+  {
+    "id": 19,
+    "topic": "What’s the one school uniform rule or dress code you wish you could’ve changed?"
   }
 ]
