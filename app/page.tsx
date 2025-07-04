@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { formatTime } from "@/utils/time-util-fns";
 import { timeConfig } from "@/data/time-config";
-import data from "../data/speech-topics-mothers-day.json";
+import data from "../data/speech-topics-cartoon.json";
 import { TitleBar } from "@/components/TitleBar";
 import { GoButton } from "@/components/GoButton";
 
